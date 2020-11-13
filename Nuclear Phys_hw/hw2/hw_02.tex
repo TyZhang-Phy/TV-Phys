@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\title{Homework 02}
+\author{Zhang Tingyu $\ $ 35206402}
+\graphicspath{{figures/}}
+
+\begin{document}
+
+\maketitle
+
+\section*{(1)}
+
+The electric quadrupole moment of this deformed nucleus can be calculated with 
+the integral:
+\begin{equation*}
+    \begin{split}
+        Q_d&=\frac{1}{e}\int\limits_V\rho(3z^2-r^2)dv\\
+        &=\frac{\rho}{e}\int\limits_V(2z^2-x^2-y^2)dv\\
+        &=\frac{Z}{V}\Big(\frac{2}{5}\frac{R^2}{1.2}V-\frac{2}{5}R^2V\Big)
+    \end{split}
+\end{equation*}
+with $R=1.2A^{\frac{1}{3}}{\rm fm}$, $A=200$ and $Z=80$, the quadrupole moment is 
+\begin{equation*}
+    Q_d=-\frac{Z}{15}R^2=-262.65{\rm fm^2}
+\end{equation*}
+
+\section*{(2)}
+
+The expression of spherical harmonics:
+\begin{equation*}
+    \begin{split}
+        Y_{20}&=\frac{1}{4}\sqrt{\frac{5}{\pi}}(3cos^2\theta-1)\\
+        Y_{2-2}&=\frac{1}{\sqrt{2\pi}}\exp(-2i\varphi)\frac{\sqrt{15}}{4}sin^2\theta\\
+        Y_{22}&=\frac{1}{\sqrt{2\pi}}\exp(2i\varphi)\frac{\sqrt{15}}{4}sin^2\theta
+    \end{split}
+\end{equation*}
+With $L=2$ and $M_L=2$, the angular part 
+\begin{equation*}
+    \begin{split}
+        \int\limits_0^2\pi\int_0^\pi Y^*_{LM_L}Y_{20}Y_{LM_L}sin\theta d\theta
+        d\varphi&=\int_0^\pi\frac{15}{64}\sqrt{\frac{5}{\pi}}sin^5\theta(3cos^2
+        \theta-1)d\theta\\
+        &=-\frac{15}{64}\sqrt{\frac{5}{\pi}}\int_0^\pi sin^4\theta(3cos^2\theta
+        -1)dcos\theta\\
+        &=-\frac{15}{64}\sqrt{\frac{5}{\pi}}\int_0^\pi(1-cos^2\theta)^2(3cos^2
+        \theta-1)dcos\theta\\
+        &=-\frac{15}{64}\sqrt{\frac{5}{\pi}}\int_1^{-1}(1-x^2)^2(3x^2-1)dx\\
+        &=-\frac{1}{7}\sqrt{\frac{5}{\pi}}
+    \end{split}
+\end{equation*}
+
+\end{document}
