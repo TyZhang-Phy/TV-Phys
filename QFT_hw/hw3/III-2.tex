@@ -1,0 +1,138 @@
+\documentclass[12pt]{article}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\title{Homework 03}
+\author{Zhang Tingyu $\ $ 35206402}
+\graphicspath{{figures/}}
+
+\begin{document}
+
+\maketitle
+
+\section*{(a)}
+
+\begin{equation*}
+    \begin{split}
+        \int d^3x\psi^\dagger\psi&=\int d^3x\int\frac{d^3p}{(2\pi)^3}
+        \int\frac{d^3q}{(2\pi)^3}\sum_{r,s}\xi^T_r\xi_sa^\dagger_{\vec{p},r}
+        a_{\vec{q},s}e^{i(E_{\vec{p}}-E_{\vec{q}})t-i(\vec{p}-\vec{q})\cdot\vec{x}}\\
+        &=\int\frac{d^3p}{(2\pi)^3}\int\frac{d^3q}{(2\pi)^3}\sum_{r,s}
+        \xi^T_r\xi_sa^\dagger_{\vec{p},r}a_{\vec{q},s}e^{i(E_{\vec{p}}-E_{\vec{q}})t}
+        (2\pi)^3\delta^3(\vec{p}-\vec{q})+{\rm const}\\
+        &=\int\frac{d^3p}{(2\pi)^3}\sum_{r,s}\xi^T_r\xi_sa^\dagger_{\vec{p},r}
+        a_{\vec{p},s}+{\rm const}\\
+        &=\int\frac{d^3p}{(2\pi)^3}\sum_ra^\dagger_{\vec{p},r}a_{\vec{p},r}
+        +{\rm const}.
+    \end{split}
+\end{equation*}
+Similarly, we get 
+\begin{equation*}
+    \begin{split}
+        H&=\int d^3x\psi^\dagger\Big[-\frac{1}{2m}\vec{\partial}\cdot\vec
+        {\partial}\Big]\psi\\
+        &=\int\frac{d^3p}{(2\pi)^3}\frac{|\vec{p}|^2}{2m}\sum_r
+        a^\dagger_{\vec{p},r}a_{\vec{p},r}+{\rm const}.
+    \end{split}
+\end{equation*}
+Thus
+\begin{equation*}
+    H'\equiv H-\epsilon_F\int d^3x\psi^\dagger\psi=\int\frac{d^3p}{(2\pi)^3}
+    \sum_r(E_{\vec{p}}-\epsilon_F)a^\dagger_{\vec{p},r}a_{\vec{p},r}+{\rm const}
+\end{equation*}
+
+\section*{(b)}
+
+The Noether current $J^\mu$ is 
+\begin{equation*}
+    J^\mu=-i\frac{\delta\mathcal{L}}{\delta(\partial_\mu\psi)}\psi+
+    i\frac{\delta\mathcal{L}}{\delta(\partial_\mu\psi^\dagger)}\psi^\dagger
+\end{equation*}
+and the $\mu=0$ component is 
+\begin{equation*}
+    J^0=-i\frac{\delta\mathcal{L}}{\delta(\partial_t\psi)}\psi+i\frac
+    {\delta\mathcal{L}}{\delta(\partial_t\psi^\dagger)}\psi^\dagger
+    =\psi^\dagger\psi.
+\end{equation*}
+
+The Noether charge, the electron number is $N_e=\int d^3x\psi^\dagger\psi$.
+
+\section*{(d)}
+
+\begin{equation*}
+    \begin{split}
+        H'=&\int\frac{d^3p}{(2\pi)^3}\sum_r(E_{\vec{p}}-E_{p_F})
+        a^\dagger_{\vec{p},r}a_{\vec{p},r}+{\rm const}\\
+        =&-\int\limits_{|\vec{p}|<|\vec{p}_F|}\frac{d^3p}{(2\pi)^3}\sum_r
+        (E_{p_F}-E_{\vec{p}})a^\dagger_{\vec{p},r}a_{\vec{p},r}\\
+        &+\int\limits_{|\vec{p}|>|\vec{p}_F|}\frac{d^3p}{(2\pi)^3}\sum_r
+        (E_{\vec{p}}-E_{p_F})a^\dagger_{\vec{p},r}a_{\vec{p},r}+{\rm const}.
+    \end{split}
+\end{equation*}
+Notice that $a^\dagger_{\vec{p},r}a_{\vec{p},r}=1-b^\dagger_{\vec{p},r}b_{\vec{p},r}$, 
+and the Hamiltonian $H'$ may be rewritten:
+\begin{equation*}
+    \begin{split}
+        H'=&-\int\limits_{|\vec{p}|<|\vec{p}_F|}\frac{d^3p}{(2\pi)^3}
+        \sum_r(E_{p_F}-E_{\vec{p}})+
+        \int\limits_{|\vec{p}|<|\vec{p}_F|}\frac{d^3p}{(2\pi)^3}\sum_r
+        (E_{p_F}-E_{\vec{p}})b^\dagger_{\vec{p},r}b_{\vec{p},r}\\
+        &+\int\limits_{|\vec{p}|>|\vec{p}_F|}\frac{d^3p}{(2\pi)^3}\sum_r
+        (E_{\vec{p}}-E_{p_F})a^\dagger_{\vec{p},r}a_{\vec{p},r}+{\rm const}\\
+        =&\int\limits_{|\vec{p}|<|\vec{p}_F|}\frac{d^3p}{(2\pi)^3}\sum_r
+        (E_{p_F}-E_{\vec{p}})b^\dagger_{\vec{p},r}b_{\vec{p},r}\\
+        &+\int\limits_{|\vec{p}|>|\vec{p}_F|}\frac{d^3p}{(2\pi)^3}\sum_r
+        (E_{\vec{p}}-E_{p_F})a^\dagger_{\vec{p},r}a_{\vec{p},r}+{\rm const}.
+    \end{split}
+\end{equation*}
+When $b^\dagger_{\vec{p},r}b_{\vec{p},r}=0$ for each $|\vec{p}|<|\vec{p}_F|$, 
+the Hamiltonian reaches minimum, the system is at ground state, in which all 
+the levels below the Fermi surface are filled.
+
+\begin{equation*}
+    \begin{split}
+        &T\big\{\psi(\vec{x},t)\psi^\dagger_I(\vec{y},t')\big\}\\
+        =&\Theta(t-t')\int\frac{d^3p}{(2\pi)^3}\sum_{r,s}\xi_r\xi^T_sa_{\vec{p},
+        r}e^{-iE_{\vec{p}}t+i\vec{p}\cdot\vec{x}}\int\frac{d^3q}{(2\pi)^3}
+        a^\dagger_{\vec{q},s}e^{iE_{\vec{q}}t'-i\vec{q}\cdot\vec{y}}\\
+        &-\Theta(t-t')\int\frac{d^3q}{(2\pi)^3}\sum_{r,s}\xi_r\xi^T_s
+        a^\dagger_{\vec{q},s}e^{iE_{\vec{q}}t'-i\vec{q}\cdot\vec{y}}
+        \int\frac{d^3p}{(2\pi)^3}a_{\vec{p},r}e^{-iE_{\vec{p}}t+i\vec{p}\cdot
+        \vec{x}}
+    \end{split}
+\end{equation*}
+Notice that
+\begin{equation*}
+    \bra*{0}a^\dagger_{\vec{p},r}a_{\vec{q},s}\ket*{0}=0, \ \ \ \ \ \ \ \ 
+    \bra*{0}a_{\vec{p},r}a^\dagger_{\vec{q},s}\ket*{0}=(2\pi)^3
+    \delta_{r,s}\delta^3(\vec{p}-\vec{q})
+\end{equation*}
+Thus we can write
+\begin{equation*}
+    \begin{split}
+        &\bra*{0}T\big\{\psi(\vec{x},t)\psi^\dagger_I(\vec{y},t')\big\}\ket*{0}\\
+        =&\Theta(t-t')\Theta(|\vec{p}|-p_F)\int\frac{d^3p}{(2\pi)^3}\sum_{r,s}
+        \xi_r\xi^T_se^{-i(E_{\vec{p}}-\epsilon_F)t+i\vec{p}\cdot\vec{x}}\\
+        &\times\int\frac{d^3q}{(2\pi)^3}e^{i(E_{\vec{q}}-\epsilon_F)t'-i\vec{q}
+        \cdot\vec{y}}(2\pi)^3\delta_{r,s}\delta(\vec{p}-\vec{q})\\
+        &-\Theta(t'-t)\Theta(p_F-|\vec{p}|)\int\frac{d^3q}{(2\pi)^3}\sum_{r,s}
+        \xi_r\xi^T_se^{i(E_{\vec{q}}-\epsilon_F)t'-i\vec{q}\cdot\vec{y}}\\
+        &\times\int\frac{d^3p}{(2\pi)^3}e^{-i(E_{\vec{p}}-\epsilon_F)t+i\vec{p}
+        \cdot\vec{x}}(2\pi)^3\delta_{r,s}\delta(\vec{p}-\vec{q})\\
+        =&\mathbf{1}_{2 \times 2} \int \frac{d^{3} p}{(2 \pi)^{3}}\left(\Theta
+        \left(t-t^{\prime}\right) \Theta\left(|p|-p_{F}\right) e^{-i\left(E_{p}
+        -\epsilon_{F}\right)\left(t-t^{\prime}\right)+i \vec{p} \cdot(\vec{x}-
+        \vec{y})}\right.\\
+        &\left.-\Theta\left(t^{\prime}-t\right) \Theta\left(p_{F}-|p|\right)
+        e^{-i\left(E_{p}-\epsilon_{F}\right)\left(t-t^{\prime}\right)-i\vec{p}
+        \cdot(\vec{x}-\vec{y})}\right)
+    \end{split}
+\end{equation*}
+
+\end{document}

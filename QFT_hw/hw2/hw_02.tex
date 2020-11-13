@@ -1,0 +1,174 @@
+\documentclass[12pt]{article}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\title{Homework 02}
+\author{Zhang Tingyu $\ $ 35206402}
+\graphicspath{{figures/}}
+
+\begin{document}
+
+\maketitle
+
+\section*{II-2}
+
+\subsection*{(a)}
+
+The Lagrangian of the system is written
+\begin{equation}
+    \mathcal{L}=(\nabla\Phi)^*(\nabla\Phi)-V(|\Phi|^2)
+\end{equation}
+which gives the Euler-Lagrange equation:
+\begin{equation}
+    \nabla\frac{\delta\mathcal{L}}{\delta(\nabla\Phi)}-\frac{\delta
+    \mathcal{L}}{\delta\Phi}=0,\ \ \ \ 
+    \nabla\frac{\delta\mathcal{L}}{\delta(\nabla\Phi^*)}-\frac{\delta
+    \mathcal{L}}{\delta\Phi^*}=0.
+\end{equation}
+The system is invariant under the phase transformation
+\begin{equation*}
+    \Phi\rightarrow e^{-i\alpha}\Phi,\ \ \ \ 
+    \Phi^*\rightarrow e^{i\alpha}\Phi^*
+\end{equation*}
+Thus
+\begin{equation}
+    \delta\mathcal{L}=\frac{\delta\mathcal{L}}{\delta\Phi}\delta\Phi+
+    \frac{\delta\mathcal{L}}{\delta(\nabla\Phi)}\delta(\nabla\Phi)+
+    \frac{\delta\mathcal{L}}{\delta\Phi^*}\delta\Phi^*+
+    \frac{\delta\mathcal{L}}{\delta(\nabla\Phi^*)}\delta(\nabla\Phi^*)=0,
+\end{equation}
+and according to the Eq.(2), 
+\begin{equation}
+    \begin{split}
+        \delta\mathcal{L}&=\nabla\frac{\delta\mathcal{L}}{\delta(\nabla\Phi)}
+        \delta\Phi+\frac{\delta\mathcal{L}}{\delta(\nabla\Phi)}\delta(\nabla
+        \Phi)+\nabla\frac{\delta\mathcal{L}}{\delta(\nabla\Phi^*)}\delta\Phi^*+
+        \frac{\delta\mathcal{L}}{\delta(\nabla\Phi^*)}\delta(\nabla\Phi^*)\\
+        &=-i\nabla(\frac{\delta\mathcal{L}}{\delta(\nabla\Phi)}\Phi)\delta\alpha
+        +i\nabla(\frac{\delta\mathcal{L}}{\delta(\nabla\Phi^*)}\Phi^*)\delta
+        \alpha=0
+    \end{split}
+\end{equation}
+The Noether current is defined as
+\begin{equation}
+    \begin{split}
+        J_\mu&=-i\frac{\delta\mathcal{L}}{\delta(\partial_\mu\Phi)}\Phi+
+        i\frac{\delta\mathcal{L}}{\delta(\partial_\mu\Phi^*)}\Phi^*\\
+        &=-i(\partial_\mu\Phi^*)\Phi+i\Phi^*(\partial_\mu\Phi)\\
+        &=-i[(\partial_\mu\Phi^*)\Phi-\Phi^*(\partial_\mu\Phi)]\\
+        &=2{\rm Im}[(\partial_\mu\Phi^*)\Phi].
+    \end{split}
+\end{equation}
+And the Noether charge is 
+\begin{equation}
+    \begin{split}
+        N&=\int d^3xJ_0=2\int d^3x{\rm Im}[(\partial_t\Phi^*)\Phi]\\
+        &=2\int d^3x{\rm Im}[\pi^*\Phi]
+    \end{split}
+\end{equation}
+
+We require the complex scalar field $\Phi$ and its conjugate $\pi$ to be 
+\begin{equation*}
+    \Phi=\Phi_1+i\Phi_2,\ \ \ \ \pi=\pi_1+i\pi_2
+\end{equation*}
+The Hamiltonian can be written as 
+\begin{equation}
+    \begin{split}
+        H&=\int d^dx\big[\pi^*\pi+(\nabla\Phi)^*(\nabla\Phi)+V(|\Phi|^2)\big]\\
+        &=\int d^dx\big[\pi_1^2+\pi_2^2+(\nabla\Phi_1)^2+(\nabla\Phi_2)^2+
+        V(|\Phi|^2)\big].
+    \end{split}
+\end{equation}
+
+And the chemical potential is 
+
+\begin{equation}
+    \begin{split}
+        -\mu N&=-2\mu\int d^3x {\rm Im}[\pi^*\Phi]\\
+        &=-2\mu\int d^3x {\rm Im}[(\pi_1-i\pi_2)(\Phi_1+i\Phi_2)]\\
+        &=-2\mu\int d^3x(\pi_1\Phi_2-\pi_2\Phi_1)
+    \end{split}
+\end{equation}
+
+Then we can write the partition function in path integral form
+\begin{equation}
+    \begin{split}
+        Z=&\int \mathcal{D}\pi\mathcal{D}\pi^*\mathcal{D}\Phi\mathcal{D}\Phi^*
+        \exp\bigg[-\int_0^\beta d\tau(H-\mu N)+i\int d^{d+1}x((\pi(\partial_\tau
+        \Phi^*)+\pi^*(\partial_\tau\Phi)))\bigg]\\
+        =&\int \mathcal{D}\pi\mathcal{D}\pi^*\mathcal{D}\Phi\mathcal{D}\Phi^*
+        \exp\bigg\{-\int d^{d+1}x\Big[\pi_1^2+\pi_2^2+(\nabla\Phi_1)^2+(\nabla
+        \Phi_2)^2+V(|\Phi|^2)\\
+        &-2\mu(\pi_1\Phi_2-\pi_2\Phi_1)-2i\pi_1\partial_\tau
+        \Phi_1-2i\pi_2\partial_\tau\Phi_2\Big]\bigg\}\\
+        =&\int \mathcal{D}\pi\mathcal{D}\pi^*\mathcal{D}\Phi\mathcal{D}\Phi^*
+        \exp\bigg\{-\int d^{d+1}x\Big[\pi_1^2+2\pi_1(-i\partial_\tau\Phi_1
+        -\mu\Phi_2)+\pi_2^2\\
+        &+2\pi_2(-i\partial_\tau\Phi_2+\mu\Phi_1)+(\nabla\Phi_1)^2
+        +(\nabla\Phi_2)^2+V(|\Phi|^2)\Big]\bigg\}.
+    \end{split}
+\end{equation}
+
+Now carry out the Gaussian integral over $\pi_1$ and $\pi_2$ in Eq.(9),
+
+\begin{equation}
+    \begin{split}
+        &\int d\pi_1\exp\bigg\{-\int d^{d+1}x\Big[\pi_1^2+2\pi_1
+        (-i\partial_\tau\Phi_1-\mu\Phi_2)\Big]\bigg\}\\
+        =&C\exp[-\int d^{d+1}x(\partial_\tau\Phi_1-i\mu\Phi_2)^2]
+    \end{split}
+\end{equation}
+\begin{equation}
+    \begin{split}
+        &\int d\pi_2\exp\bigg\{-\int d^{d+1}x\Big[\pi_2^2+2\pi_2
+        (-i\partial_\tau\Phi_2+\mu\Phi_1)\Big]\bigg\}\\
+        =&C\exp[-\int d^{d+1}x(\partial_\tau\Phi_2+i\mu\Phi_1)^2]
+    \end{split}
+\end{equation}
+And the partition function becomes
+\begin{equation}
+    \begin{split}
+        Z&=C\int \mathcal{D}\Phi\mathcal{D}\Phi^*\exp\bigg\{-\int d^{d+1}x
+        \Big[(\partial_\tau\Phi_1-i\mu\Phi_2)^2+(\partial_\tau\Phi_2
+        +i\mu\Phi_1)^2\\
+        &+(\nabla\Phi_1)^2+(\nabla\Phi_2)^2+V(|\Phi|^2)\Big]\bigg\}\\
+        &=C\int \mathcal{D}\Phi\mathcal{D}\Phi^*\exp\bigg\{-\int d^{d+1}x
+        \Big[(\partial_\tau+\mu)\Phi^*(\partial_\tau-\mu)\Phi+(\nabla\Phi)^*
+        (\nabla\Phi)+V(|\Phi|^2)\Big]\bigg\}
+    \end{split}
+\end{equation}
+
+\subsection*{(b)}
+
+With the field redefinition
+\begin{equation}
+    \Phi'(x,t)=e^{i\mu t}\Phi
+\end{equation}
+the time derivation of the new field is given by
+\begin{equation}
+    \begin{split}
+        &\partial_\tau\Phi'=\mu\Phi'+e^{i\mu t}\partial_\tau\Phi\\
+        &\partial_\tau\Phi'^*=-\mu\Phi'^*+e^{-i\mu t}\partial_\tau\Phi^*
+    \end{split}
+\end{equation}
+and the modified partition function becomes
+\begin{equation}
+    \begin{split}
+        Z&=C\int \mathcal{D}\Phi'\mathcal{D}\Phi'^*\exp\bigg\{-\int d^{d+1}x
+        \Big[(\partial_\tau+\mu)\Phi'^*(\partial_\tau-\mu)\Phi'+(\nabla\Phi')^*
+        (\nabla\Phi')\\
+        &+V(|\Phi'|^2)\Big]\bigg\}\\
+        &=C\int \mathcal{D}\Phi\mathcal{D}\Phi^*\exp\bigg\{-\int d^{d+1}x
+        \Big[\partial_\tau\Phi^*\partial_\tau\Phi+(\nabla\Phi)^*
+        (\nabla\Phi)+V(|\Phi|^2)\Big]\bigg\},
+    \end{split}
+\end{equation}
+which is equivalent to the path integral without the modification.
+
+\end{document}

@@ -1,0 +1,227 @@
+\documentclass[12pt]{article}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\title{Homework 01}
+\author{Zhang Tingyu $\ $ 35206402}
+\graphicspath{{figures/}}
+
+\begin{document}
+
+\maketitle
+
+\section*{I-1}
+
+\begin{equation*}
+    \bra*{q_f}e^{-HT}\ket*{q_i}=\sqrt{\frac{m\omega}{2\pi i\sin(\omega T)}}
+    \exp{\frac{im\omega}{2\sin(\omega T)}[\cos(\omega T)(q_f^2+q_i^2)-2q_iq_f]}
+\end{equation*}
+
+Notice that
+
+\begin{equation*}
+    \begin{split}
+        i\sin(\omega T)&=\frac{1}{2}(e^{i\omega T}-e^{-i\omega T})\\
+        \cos(\omega T)&=\frac{1}{2}(e^{i\omega T}+e^{-i\omega T})
+    \end{split}
+\end{equation*}
+
+then we can expand the expression in powers of $e^{-i\omega T}$, to the 
+second order:
+
+\begin{equation*}
+    \begin{split}
+        \bra*{q_f}e^{-HT}\ket*{q_i}&=\sqrt{\frac{m\omega}{\pi}}e^{-i
+        \frac{\omega}{2}T}(1-e^{-i2\omega T})^{-\frac{1}{2}}\\
+        &\times\exp\Big\{-m\omega\Big[\frac{e^{i\omega T}+e^{-i\omega T}}
+        {2(e^{i\omega T}-e^{-i\omega T})}(q_f^2+q_i^2)-\frac{2q_iq_f}
+        {e^{i\omega T}-e^{-i\omega T}}\Big]\Big\}\\
+        &=\sqrt{\frac{m\omega}{\pi}}e^{-i\frac{\omega}{2}T}(1+\frac{1}{2}
+        e^{-i2\omega T}+\dots)\\
+        &\times\exp\{-\frac{m\omega}{2}[(q_f^2+q_i^2)(1+2e^{-i2\omega T}+
+        \dots)-4q_iq_fe^{-i\omega T}(1+e^{-i2\omega T}+\dots)]\}\\
+        &=\sqrt{\frac{m\omega}{\pi}}e^{-i\frac{\omega}{2}T}(1+\frac{1}{2}
+        e^{-i2\omega T}+\dots)e^{-\frac{m\omega}{2}(q_f^2+q_i^2)}\\
+        &\times[1-m\omega e^{-i2\omega T}+2m\omega q_iq_fe^{-i\omega T}+
+        2m^2\omega^2q_i^2q_f^2e^{-i2\omega T}+\dots]
+    \end{split}
+\end{equation*}
+
+From the equation above, we can find out the energy eigenvalues $\{E_n\}$
+\begin{equation*}
+    E_n=\omega(\frac{1}{2}+n)
+\end{equation*}
+
+The lowest order term is 
+\begin{equation*}
+    \sqrt{\frac{m\omega}{\pi}}e^{-i\frac{\omega}{2}T}e^{-\frac{m\omega}{2}
+    (q_f^2+q_i^2)}
+\end{equation*}
+
+thus the wave function for the ground state is 
+\begin{equation*}
+    \begin{split}
+        \psi_0(q_i)&=(\frac{m\omega}{\pi})^{\frac{1}{4}}e^{-\frac{m\omega}
+        {2}q_i^2}\\
+        \psi_0(q_i)&=(\frac{m\omega}{\pi})^{\frac{1}{4}}e^{-\frac{m\omega}
+        {2}q_f^2}
+    \end{split}
+\end{equation*}
+
+The next term is
+\begin{equation*}
+    2m\omega\sqrt{\frac{m\omega}{\pi}}e^{-i\frac{3}{2}\omega T}q_iq_f
+    e^{-\frac{m\omega}{2}(q_f^2+q_i^2)}
+\end{equation*}
+
+the wave function for the first excited state is 
+\begin{equation*}
+    \begin{split}
+        \psi_1(q_i)&=(m\omega)^{\frac{3}{4}}(\frac{4}{\pi})^{\frac{1}{4}}
+        q_ie^{-\frac{m\omega}{2}q_i^2}\\
+        \psi_1(q_f)&=(m\omega)^{\frac{3}{4}}(\frac{4}{\pi})^{\frac{1}{4}}
+        q_fe^{-\frac{m\omega}{2}q_f^2}
+    \end{split}
+\end{equation*}
+
+\section*{II-1}
+
+\subsection*{(a)}
+
+\begin{equation*}
+    \begin{split}
+        \bra*{0}e^{-\beta H}\ket*{0}&=\int d\bar{\theta}_Nd\theta_N\bra*{0}
+        (\ket*{0}+\theta_N\ket*{1})\Psi_{fin}(\bar{\theta}_N)e^{-\bar{
+            \theta}_N\theta_N}\\
+        &=\int d\bar{\theta}_Nd\theta_Nd\bar{\theta}_{N-1}d\theta_{N-1}
+        \dots d\bar{\theta}_0d\theta_0e^{[\dots]}\Psi_{in}(\bar{\theta}_0)
+        (1-\bar{\theta}_N\theta_N)\\
+        &=\int d\bar{\theta}_Nd\theta_Nd\bar{\theta}_{N-1}d\theta_{N-1}
+        \dots d\bar{\theta}_0d\theta_0e^{[\dots]}\bar{\theta}_N\theta_N\\
+        &=\int d\bar{\theta}_Nd\bar{\theta}_{N-1}d\theta_{N-1}
+        \dots d\bar{\theta}_0d\theta_0e^{[\dots]}\bar{\theta}_N
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \bra*{1}e^{-\beta H}\ket*{1}&=\int d\bar{\theta}_Nd\theta_N\bra*{1}
+        (\ket*{0}+\theta_N\ket*{1})\Psi_{fin}(\bar{\theta}_N)e^{-\bar{
+            \theta}_N\theta_N}\\
+        &=\int d\bar{\theta}_Nd\theta_N\theta_Nd\bar{\theta}_{N-1}
+        d\theta_{N-1}\dots d\bar{\theta}_0d\theta_0e^{[\dots]}\Psi_{in}
+        (\bar{\theta}_0)(1-\bar{\theta}_N\theta_N)\\
+        &=\int d\bar{\theta}_Nd\theta_Nd\bar{\theta}_{N-1}
+        d\theta_{N-1}\dots d\bar{\theta}_0d\theta_0e^{[\dots]}\Psi_{in}
+        (\bar{\theta}_0)\theta_N\bar{\theta}_0\\
+        &=\int d\bar{\theta}_Nd\bar{\theta}_{N-1}d\theta_{N-1}
+        \dots d\bar{\theta}_0d\theta_0e^{[\dots]}\bar{\theta}_0
+    \end{split}
+\end{equation*}
+
+Thus the partition function $Z$ is written
+
+\begin{equation*}
+    \begin{split}
+        Z&=\tr[e^{-\beta H}]=\bra*{0}e^{-\beta H}\ket*{0}+
+        \bra*{1}e^{-\beta H}\ket*{1}\\
+        &=\int d\bar{\theta}_Nd\bar{\theta}_{N-1}d\theta_{N-1}
+        \dots d\bar{\theta}_0d\theta_0e^{[\dots]}
+        (\bar{\theta}_N+\bar{\theta}_0)
+    \end{split}
+\end{equation*}
+
+\subsection*{(b)}
+
+We suppose the Grassmann function 
+$f(\bar{\theta}_N,\bar{\theta}_0)=c_{00}+c_{10}\bar{\theta}_N+c_{01}
+\bar{\theta}_0+c_{11}\bar{\theta}_N\bar{\theta}_0$, then
+\begin{equation*}
+    \begin{split}
+        &\int d\bar{\theta}_N(\bar{\theta}_N+\bar{\theta}_0)
+        f(\bar{\theta}_N,\bar{\theta}_0)\\
+        =&\int d\bar{\theta}_N(\bar{\theta}_N+\bar{\theta}_0)
+        (c_{00}+c_{10}\bar{\theta}_N+c_{01}\bar{\theta}_0+c_{11}
+        \bar{\theta}_N\bar{\theta}_0)\\
+        =&\int d\bar{\theta}_N(c_{00}\bar{\theta}_N-c_{10}\bar{\theta}_N
+        \bar{\theta}_0+c_{01}\bar{\theta}_N\bar{\theta}_0)\\
+        =&c_{00}-c_{10}\bar{\theta}_0+c_{01}\bar{\theta}_0
+        =f(-\bar{\theta}_0,\bar{\theta}_0),
+    \end{split}
+\end{equation*}
+which means that the factor $(\bar{\theta}_N+\bar{\theta}_0)$ inserted in 
+a Grassmann integral can be regarded as something like a delta function 
+$\delta(\bar{\theta}_N+\bar{\theta}_0)$.
+
+\subsection*{(d)}
+
+\begin{equation*}
+    \begin{split}
+        &\int d\theta d\bar{\theta}d\theta'd\bar{\theta'}\exp\left[
+        (\bar{\theta},\bar{\theta'})\left(\begin{matrix}
+        -m  &p\\
+        p  &-m
+        \end{matrix}\right)\left(\begin{matrix}
+        \theta\\
+        \theta'
+        \end{matrix}\right)
+        \right]\\
+        =&\int d\theta d\bar{\theta}d\theta'd\bar{\theta'}\exp(-\bar{\theta}
+        \theta m+\bar{\theta'}\theta p+\bar{\theta}\theta'p-\bar{\theta'}
+        \theta'm)\\
+        =&\int d\theta d\bar{\theta}d\theta'd\bar{\theta'}[1-\bar{\theta}
+        \theta m+\bar{\theta'}\theta p+\bar{\theta}\theta'p-\bar{\theta'}
+        \theta'm+\frac{1}{2}(\bar{\theta}\theta\bar{\theta'}\theta'm^2+
+        \bar{\theta'}\theta\bar{\theta}\theta'p^2)]\\
+        =&\frac{1}{2}\int d\theta d\bar{\theta}d\theta'd\bar{\theta'}
+        (\bar{\theta'}\theta'\bar{\theta}\theta m^2-\bar{\theta'}\theta'
+        \bar{\theta}\theta p^2)\\
+        =&\frac{1}{2}(m^2-p^2)
+    \end{split}
+\end{equation*}
+
+\subsection*{(e)}
+
+The algebra of creation and annihilation operators in fermion case is 
+\begin{equation*}
+    \{\hat{a},\hat{a}\}=\{\hat{a}^\dagger,\hat{a}^\dagger\}=0,\ \ \ \ 
+    \{\hat{a},\hat{a}^\dagger\}=1.
+\end{equation*}
+
+The Hamiltonian can be written analogous to that of bosons
+
+\begin{equation*}
+    \hat{H}=\frac{\hbar\omega}{2}(\hat{a}^\dagger\hat{a}-\hat{a}
+    \hat{a}^\dagger)=\hbar\omega\Big(\hat{a}^\dagger\hat{a}-\frac{1}{2}\Big)
+\end{equation*}
+
+The partition function can be written
+
+\begin{equation*}
+    \begin{split}
+        Z&=\tr[e^{-\beta H}]=\bra*{0}e^{-\beta H}\ket*{0}+
+        \bra*{1}e^{-\beta H}\ket*{1}\\
+        &=e^{\frac{\beta\hbar\omega}{2}}\Big[\bra*{0}\ket*{0}+
+        \sum_{n=0}^\infty\frac{(-\beta\hbar\omega)^n}{n!}\bra*{1}
+        (\hat{a}^\dagger\hat{a})^n\ket*{1}\Big]
+    \end{split}
+\end{equation*}
+
+Notice that $\bra*{1}(\hat{a}^\dagger\hat{a})^n\ket*{1}=1$, and the 
+expression can be simplified
+\begin{equation*}
+    Z=e^{\frac{\beta\hbar\omega}{2}}(1+e^{-\beta\hbar\omega}).
+\end{equation*}
+
+The corresponding free energy is 
+\begin{equation*}
+    F=-T\ln Z=T\Big(-\frac{\beta\hbar\omega}{2}-\ln(1+e^{-\beta\hbar\omega})\Big)
+\end{equation*}
+
+\end{document}
