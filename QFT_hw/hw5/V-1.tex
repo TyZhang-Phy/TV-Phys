@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\title{Solution to Problem V-1}
+\author{Zhang Tingyu $\ $ 35206402}
+\graphicspath{{figures/}}
+
+\begin{document}
+
+\maketitle
+
+\section*{(a)}
+
+For Dirac Fermion with Lagrangian density
+\begin{equation}
+    \mathcal{L}=\bar{\Psi}(i\gamma^\mu\partial_\mu-m)\Psi,
+\end{equation}
+the canonical momentums are derived as 
+\begin{equation}
+    \begin{split}
+        \Pi&=\frac{\partial\mathcal{L}}{\partial\dot{\Psi}}=-i\bar{\Psi}\gamma^0\\
+        \bar{\Pi}&=\frac{\partial\mathcal{L}}{\partial\dot{\bar{\Psi}}}=0.
+    \end{split}
+\end{equation} 
+Thus the primary constraints are given by
+\begin{equation}
+    \chi_1=\Pi+i\bar{\Psi}\gamma^0,\qquad\chi_2=\bar{\Pi}.
+\end{equation}
+Notice that 
+\begin{equation}
+    [\Psi(\mathbf{x}),\Pi(\mathbf{y})]_P=\big[\bar{\Psi}(\mathbf{x}),
+    \bar{\Pi}(\mathbf{y})\big]_P=\delta^3(\mathbf{x}-\mathbf{y}),
+\end{equation}
+and $[\chi_1(\mathbf{x}),\chi_2(\mathbf{y})]=
+i\gamma^0\delta^3(\mathbf{x}-\mathbf{y})\neq0$, which shows that the constraints 
+$\chi_1$ and $\chi_2$ are second class constraints.
+\begin{equation}
+    C_{1x,2y}=-C_{2y,1x}=i\gamma^0\delta^3(\mathbf{x}-\mathbf{y}).
+\end{equation}
+\begin{equation}
+    (C^{-1})^{1x,2y}=-(C^{-1})^{2y,1x}=-i\gamma^0\int\frac{d^3k}{(2\pi)^3}e^{\mathbf{k}
+    \cdot(\mathbf{x}-\mathbf{y})}
+\end{equation}
+Then the Dirac bracket can be derived by Poission bracket 
+\begin{equation}
+    [A, B]_{D}=[A, B]_{P}-\left[A, \chi_{N}\right]_{P}
+    \left(C^{-1}\right)^{N M}\left[\chi_{M}, B\right]_{P}.
+\end{equation}
+According to this equation, we can write these Dirac bracket:
+\begin{equation}
+    \begin{split}
+        &\big[\Psi(\mathbf{x}),\bar{\Psi}(\mathbf{y})\big]_D=-i\gamma^0\delta^3
+        (\mathbf{x}-\mathbf{y})\\
+        &[\Psi(\mathbf{x}),\Pi(\mathbf{y})]_D=\delta^3(\mathbf{x}-\mathbf{y})\\
+        &\big[\bar{\Psi}(\mathbf{x}),\Pi(\mathbf{y})\big]_D=0\\
+        &\big[\bar{\Psi}(\mathbf{x}),\bar{\Pi}(\mathbf{y})\big]_D=0.
+    \end{split}
+\end{equation}
+\section*{(b)}
+
+For photon with Lagrangian density
+\begin{equation}
+    \mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu},
+\end{equation}
+where
+\begin{equation}
+    F_{\mu \nu}=\partial_{\mu} A_{\nu}-\partial_{\nu} A_{\mu},
+\end{equation}
+the canonical momentum fields are derived as 
+\begin{equation}
+    \Pi^\mu=\frac{\delta\mathcal{L}}{\delta(\partial_0A_\mu)}=-F^{0\mu}.
+\end{equation}
+The primary constraint is given by
+\begin{equation}
+    \chi_1=\Pi^0.
+\end{equation}
+The motion equation gives the secondary constriant 
+\begin{equation}
+    \partial_\mu\bigg(\frac{\delta\mathcal{L}}{\delta(\partial_0A_\mu)}\bigg)=
+    \partial_\mu\Pi^\mu=\partial_i\Pi^i=0
+\end{equation}
+\begin{equation}
+    \Rightarrow \chi_2=\partial_i\Pi^i.
+\end{equation}
+Obviously, $[\chi_1,\chi_2]_P=0$, which means they are the first class constraints. 
+We'll have to fix a gauge to eliminate the corresponding degrees of freedom. In 
+Coulomb gauge, we take
+\begin{equation}
+    \chi_3=\partial_iA^i=0.
+\end{equation}
+Notice that $[\chi_2,\chi_3]\neq0$. In this system, the current $J_0=0$, thus we 
+have the secondary constraint in Coulomb gauge 
+\begin{equation}
+    \chi_4=\partial^i\partial_iA_0=0.
+\end{equation}
+We can see that $[\chi_2,\chi_3]\neq0$, which means $\chi_2$ and $\chi_3$ are 
+the second class constraints. Meanwhile, $\chi_1$ and $\chi_4$ are first class 
+constraints. We set
+\begin{equation}
+    \chi'_1=\partial_iA^i,\qquad\chi'_2=\partial_i\Pi^i.
+\end{equation}
+The elements of $C$ matrix can be written
+\begin{equation}
+    C_{1x,2y}=-C_{2y,1x}=-\partial^i\partial_i\delta^{3}(\mathbf{x}-\mathbf{y}),
+\end{equation}
+\begin{equation}
+    (C^{-1})_{1x,2y}=-(C^{-1})_{2y, 1x}=-\int \frac{d^{3} k}{(2 \pi)^{3}}
+    \frac{e^{i \mathbf{k} \cdot(\mathbf{x}-\mathbf{y})}}
+    {\mathbf{y}^{2}}=-\frac{1}{4 \pi|\mathbf{x}-\mathbf{y}|}.
+\end{equation}
+\begin{equation}
+    \begin{split}
+        &[A^{i}(\boldsymbol{x}), \chi_{2 \boldsymbol{y}}]_{P}=-\frac{\partial}
+        {\partial x^{i}} \delta^{3}(\boldsymbol{x}-\boldsymbol{y})\\
+        &[\Pi_{i}(\boldsymbol{x}), \chi_{1 \boldsymbol{y}}]_{P}=
+        \frac{\partial}{\partial x^{i}} \delta^{3}(\boldsymbol{x}-\boldsymbol{y}).
+    \end{split}
+\end{equation}
+According to Eq.(7), we can write these Dirac brackets
+\begin{equation}
+    \begin{split}
+        &\big[A^\mu(\mathbf{x}),\Pi_\nu(\mathbf{y})\big]_D=(\delta^\mu_{\ \nu}
+        -g^{\ 0}_\nu\delta^\mu_{\ 0})\delta^3(\mathbf{x}-\mathbf{y})-
+        \partial^\mu\partial_\nu\frac{1}{4\pi|\mathbf{x}-\mathbf{y}|}\\
+        &\big[A^\mu(\mathbf{x}),A_\nu(\mathbf{y})\big]_D=0\\
+        &\big[\Pi^\mu(\mathbf{x}),\Pi_\nu(\mathbf{y})\big]_D=0.
+    \end{split}
+\end{equation}
+
+\end{document}
